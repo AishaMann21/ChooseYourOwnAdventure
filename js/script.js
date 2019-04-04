@@ -8,6 +8,7 @@ $(document).ready(function() {
     $("body").on("click", "#choices button", function() {
         var nextLevel = $(this).attr("data-next-level");
         $("#wrapper").animateCss("fadeOut", function() {
+            console.log(nextLevel,game.levels );
             renderLevel(game.levels[nextLevel]);
             $("#wrapper").removeClass("fadeOut");
             $("#wrapper").addClass("fadeIn");
@@ -16,6 +17,7 @@ $(document).ready(function() {
 });
 
 function renderLevel(level) {
+    console.log(level);
     $("#prompt").text(level.message);
     $("#choices").empty();
 
